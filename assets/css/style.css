@@ -63,10 +63,10 @@ h2 {
     color: #fff;
 }
 
-.navbar .logo {
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 25px;
+.navbar .logo img {
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
 }
 
 .navbar .menu-burger {
@@ -82,6 +82,11 @@ h2 {
 .navbar .menu-burger:hover,
 .navbar .nav-links ul li a:hover {
     color: #ffffffb4;
+}
+
+.active {
+    background-color: #666;
+    padding: 10px;
 }
 
 @media screen and (max-width: 900px) {
@@ -212,6 +217,10 @@ a.fa.fa-angle-down:hover {
 .reveal-7 {
     transition-delay: .2s;
     transform: translateY(0);
+}
+
+.reveal-8 {
+    transition-delay: .5s;
 }
 
 /* ========= ABOUT ========== */
@@ -373,7 +382,7 @@ a.fa.fa-angle-down:hover {
 /* ======== PORFOLIO ======== */
 
 #portfolio {
-    padding-top: 90px;
+    padding-top: 100px;
     padding-bottom: 100px;
     background: #fff;
     text-align: center;
@@ -392,8 +401,9 @@ a.fa.fa-angle-down:hover {
     background: rgba(240, 240, 240, 0.8);
     border-radius: 20px;
     width: 250px;
-    height: 350px;
+    height: 300px;
     margin: 10px 0;
+    position: relative;
 }
 
 .portfolioCard-header {
@@ -410,11 +420,12 @@ a.fa.fa-angle-down:hover {
     margin: auto;
     width: 70%;
     display: block;
+
 }
 
 .portfolioCard-content {
     width: 100%;
-    height: 268px;
+    height: 70%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
 }
@@ -434,13 +445,17 @@ a.fa.fa-angle-down:hover {
 }
 
 .flip-image > img {
-    height: 90%;
+    height: 80%;
+    margin: 20px 5px;
+}
+
+img.first-image {
+    object-fit: cover;
 }
 
 .flip-content {
     position: absolute;
     width: 100%;
-    height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform: rotateY(180deg);
@@ -448,17 +463,14 @@ a.fa.fa-angle-down:hover {
     flex-direction: column;
 }
 
-.flip-content  div {
-    font-size: 13px;
-    /* margin: auto 3px; */
-    text-align: center;
-}
-.p-spacer-under {
-    margin-bottom: 8px;
-}
 
 .flip-content p {
     font-size: 13px;
+    margin: 10px 0;
+}
+
+.flip-content a {
+    color: #000;
 }
 
 /* ======== CONTACT ========= */
@@ -481,7 +493,7 @@ a.fa.fa-angle-down:hover {
 
 #contact .container .email-icon {
     font-size: 40px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 #contact p {
@@ -524,7 +536,6 @@ footer .container {
 
 footer .container ul {
     display: flex;
-    padding-top: 20px;
 }
 
 footer ul li a {

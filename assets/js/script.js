@@ -50,7 +50,19 @@ document.querySelectorAll('[class*="reveal-"]').forEach(function(r) {
     observer.observe(r)
 });
 
+// ========= FLIP IMAGES ========
 
+const portfolioCards = document.querySelectorAll('.portfolioCard-content');
+
+portfolioCards.forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.classList.add('flip'); 
+    });
+
+    card.addEventListener('mouseout', () => {
+        card.classList.remove('flip'); 
+    });
+});
 
 // ========== FOOTER ==========
 
@@ -60,18 +72,47 @@ year.innerHTML += date.getFullYear();
 
 
 
+// ========= CLASS ACTIVE =========
 
+// let navContainer = document.getElementById('class-active');
+// let links = Array.from(document.querySelectorAll('.close-nav'));
 
-// Sélectionnez tous les éléments avec la classe .portfolioCard-content
-const portfolioCards = document.querySelectorAll('.portfolioCard-content');
+// links.forEach(function(link) {
+//   link.addEventListener('click', function() {
+//     let current = document.querySelector('#class-active .active');
+//     if (current) {
+//       current.classList.remove('active');
+//     }
+//     this.classList.add('active');  
+//   });
+// });
 
-// Ajoutez un gestionnaire d'événements pour chaque élément
-portfolioCards.forEach(card => {
-    card.addEventListener('mouseover', () => {
-        card.classList.add('flip'); // Ajoute la classe flip lors du survol
-    });
+let navContainer = document.getElementById('class-active');
+let links = Array.from(document.querySelectorAll('.close-nav'));
 
-    card.addEventListener('mouseout', () => {
-        card.classList.remove('flip'); // Retire la classe flip lorsque la souris quitte l'élément
-    });
+// Ajouter un écouteur d'événement pour le défilement de la page
+window.addEventListener('scroll', function() {
+  // Calculer la position de la moitié de la page
+  let halfwayPoint = window.innerHeight / 2;
+  // Itérer sur chaque lien
+  links.forEach(function(link) {
+    // Récupérer l'élément cible lié au lien
+    let target = document.querySelector(link.getAttribute('href'));
+    // Vérifier si la position de l'élément cible est inférieure à la moitié de la page
+    if (target.getBoundingClientRect().top < halfwayPoint) {
+      // Retirer la classe active de tous les liens
+      links.forEach(function(link) {
+        link.classList.remove('active');
+      });
+      // Ajouter la classe active uniquement au lien actuel
+      link.classList.add('active');
+    }
+  });
 });
+
+
+
+
+
+
+  
