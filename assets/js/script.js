@@ -14,19 +14,6 @@ closeNav.forEach(items => {
     items.addEventListener('click', close);
 });
 
-// ========== NAVBAR BACKGROUND COLOR ========
-
-let navBar = document.querySelector('.navbar');
-
-window.onscroll = () => {
-    if (window.scrollY > 0.5) {
-        navBar.classList.add('nav-active'); // Correction ici
-    } else {
-        navBar.classList.remove('nav-active'); // Correction ici
-    }
-    console.log(navBar);
-};
-
 // ========== HANDLE INTERSECTION =========
 
 let ratio = 0.1;
@@ -64,6 +51,49 @@ portfolioCards.forEach(card => {
     });
 });
 
+// ========= CLASS ACTIVE =========
+
+let navBar = document.querySelector('.navbar');
+let sections = document.querySelectorAll('section');
+let navLi = document.querySelectorAll('#class-active li a');
+console.log(navLi);
+
+window.onscroll = () => {
+    if (window.scrollY > 0.5) {
+        navBar.classList.add('nav-active'); 
+    } else {
+        navBar.classList.remove('nav-active'); 
+    }
+    
+    let fromTop = window.scrollY;
+    
+    sections.forEach(sec => {
+        let top = sec.offsetTop - 200;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+        
+        if (fromTop >= top && fromTop < top + height) {
+            navLi.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector('#class-active li a[href="#' + id + '"]').classList.add('active');
+        }
+    });
+};
+
+// ========== ROTATE ICON ==========
+
+const icons = document.querySelectorAll('div.icon');
+const iFas = document.querySelectorAll('.icon i');
+console.log(icons);
+console.log(iFas);
+
+icons.forEach((icon, index) => {
+    icon.addEventListener('mouseover', () => {
+        iFas[index].classList.toggle('rotate');
+    });
+});
+
 // ========== FOOTER ==========
 
 const year = document.querySelector('.year');
@@ -72,47 +102,7 @@ year.innerHTML += date.getFullYear();
 
 
 
-// ========= CLASS ACTIVE =========
-
-// let navContainer = document.getElementById('class-active');
-// let links = Array.from(document.querySelectorAll('.close-nav'));
-
-// links.forEach(function(link) {
-//   link.addEventListener('click', function() {
-//     let current = document.querySelector('#class-active .active');
-//     if (current) {
-//       current.classList.remove('active');
-//     }
-//     this.classList.add('active');  
-//   });
-// });
-
-let navContainer = document.getElementById('class-active');
-let links = Array.from(document.querySelectorAll('.close-nav'));
-
-// Ajouter un écouteur d'événement pour le défilement de la page
-window.addEventListener('scroll', function() {
-  // Calculer la position de la moitié de la page
-  let halfwayPoint = window.innerHeight / 2;
-  // Itérer sur chaque lien
-  links.forEach(function(link) {
-    // Récupérer l'élément cible lié au lien
-    let target = document.querySelector(link.getAttribute('href'));
-    // Vérifier si la position de l'élément cible est inférieure à la moitié de la page
-    if (target.getBoundingClientRect().top < halfwayPoint) {
-      // Retirer la classe active de tous les liens
-      links.forEach(function(link) {
-        link.classList.remove('active');
-      });
-      // Ajouter la classe active uniquement au lien actuel
-      link.classList.add('active');
-    }
-  });
-});
 
 
 
 
-
-
-  
