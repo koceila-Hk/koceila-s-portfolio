@@ -39,17 +39,18 @@ document.querySelectorAll('[class*="reveal-"]').forEach(function(r) {
 
 // ========= FLIP IMAGES ========
 
-const portfolioCards = document.querySelectorAll('.portfolioCard-content');
+// const portfolioCards = document.querySelectorAll('.portfolioCard');
+// console.log(portfolioCards);
 
-portfolioCards.forEach(card => {
-    card.addEventListener('mouseover', () => {
-        card.classList.add('flip'); 
-    });
+// portfolioCards.forEach(card => {
+//     card.addEventListener('mouseover', () => {
+//         card.classList.add('flip'); 
+//     });
 
-    card.addEventListener('mouseout', () => {
-        card.classList.remove('flip'); 
-    });
-});
+//     card.addEventListener('mouseout', () => {
+//         card.classList.remove('flip'); 
+//     });
+// });
 
 // ========= CLASS ACTIVE =========
 
@@ -83,16 +84,17 @@ window.onscroll = () => {
 
 // ========== ROTATE ICON ==========
 
-const icons = document.querySelectorAll('div.icon');
-const iFas = document.querySelectorAll('.icon i');
-console.log(icons);
-console.log(iFas);
-
-icons.forEach((icon, index) => {
+const iconRotate = document.querySelectorAll('.icon');
+iconRotate.forEach(icon => {
     icon.addEventListener('mouseover', () => {
-        iFas[index].classList.toggle('rotate');
+        icon.style.transform = 'rotate(360deg)';
+    });
+
+    icon.addEventListener('mouseout', () => {
+        icon.style.transform = 'rotate(0deg)';
     });
 });
+
 
 // ========== FOOTER ==========
 

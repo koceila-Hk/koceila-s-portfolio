@@ -283,7 +283,6 @@ a.fa.fa-angle-down:hover {
     font-size: 36px;
 }
 
-
 /* ========= SERVICES ======== */
 
 #services {
@@ -311,16 +310,12 @@ a.fa.fa-angle-down:hover {
     color: #FFF;
     font-size: 50px;
     margin: 0 auto 40px;
+    transition: transform 0.5s;
 }
 
 #services p {
     padding: 10px;
     font-size: 14px;
-}
-
-.rotate {
-    transform: rotate(360deg);
-    transition: transform 0.8s ease; 
 }
 
 /* ========= SKILS ========= */
@@ -455,7 +450,7 @@ a.fa.fa-angle-down:hover {
     transition: all 0.5s ease;
 }
 
-.portfolioCard-content.flip {
+.portfolioCard:hover .portfolioCard-content {
     transform: rotateY(180deg);
 }
 
