@@ -57,7 +57,6 @@ document.querySelectorAll('[class*="reveal-"]').forEach(function(r) {
 let navBar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLi = document.querySelectorAll('#class-active li a');
-console.log(navLi);
 
 window.onscroll = () => {
     if (window.scrollY > 0.5) {
@@ -85,6 +84,7 @@ window.onscroll = () => {
 // ========== ROTATE ICON ==========
 
 const iconRotate = document.querySelectorAll('.icon');
+
 iconRotate.forEach(icon => {
     icon.addEventListener('mouseover', () => {
         icon.style.transform = 'rotate(360deg)';

@@ -26,9 +26,7 @@ p {
     font-weight: 300;
 }
 
-h2 {
-    font-size: 30px;
-}
+
 
 /* ========= HEADER =========== */
 
@@ -123,12 +121,9 @@ h2 {
     .navbar .nav-links ul li {
         margin: 25px 0;
     }
+
     .navbar .menu-burger {
         display: block;
-    }
-
-    #intro .container .intro-content {
-        padding-top: 40%;
     }
 
     #intro .container h1 {
@@ -137,21 +132,22 @@ h2 {
 
     #services .container .card-position {
         flex-direction: column;    
-   }
+    }
 
-   #services .container .card-position .card .icon {
+    #services .container .card-position .card .icon {
         font-size: 30px;
         width: 120px;
         height: 120px;
-   }
+    }
 
-   #resume h2 {
-    font-size: 16px;
-   }
+    #resume h2 {
+        font-size: 16px;
+    }
 
 }
 
 /* ========= INTRO =========== */
+
 
 #intro {
     background-image: url(../img/8.jpg);
@@ -159,7 +155,7 @@ h2 {
     background-size: cover;
     background-position: center;
     text-align: center;
-    height: 750px;
+    height: 750px; 
 }
 
 #intro .container {
@@ -167,8 +163,24 @@ h2 {
     height: 100%;
 }
 
-#intro .intro-content {
-    padding: 20%;
+#intro .container .intro-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+}
+
+#intro .container .intro-content a.fa.fa-angle-down {
+    position: absolute;
+    bottom: -5%;
+    left: 49%;
+    color: #aaa;
+    font-size: 36px;
+    transition: all 0.5s;
+}
+
+#intro .container .intro-content a.fa.fa-angle-down:hover {
+    color: #FFF;
 }
 
 #intro h1 {
@@ -180,19 +192,8 @@ h2 {
 #intro p {
     color: #ddd;
     font-size: 20px;
+    font-family: 'Lato', sans-serif;
 }
-
-a.fa.fa-angle-down {
-    color: #aaa;
-    font-size: 36px;
-    margin-top: 250px;
-    transition: all 0.5s;
-}
-
-a.fa.fa-angle-down:hover {
-    color: #FFF;
-}
-
 
 /* ========= CLASS REVEAL ========== */
 
@@ -230,7 +231,7 @@ a.fa.fa-angle-down:hover {
 }
 
 .reveal-7 {
-    transition-delay: .2s;
+    transition-delay: .3s;
     transform: translateY(0);
 }
 
@@ -406,6 +407,7 @@ a.fa.fa-angle-down:hover {
 
 #portfolio {
     padding-top: 100px;
+    padding-bottom: 80px;
     background: #fff;
     text-align: center;
 }
