@@ -363,7 +363,7 @@ p {
 }
 
 #resume {
-    background-image: url(../img/laptop.jpeg);
+    background-image: url(../img/AdobeStock_3.jpeg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -377,7 +377,7 @@ p {
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
 }
 
 #resume h2 {
