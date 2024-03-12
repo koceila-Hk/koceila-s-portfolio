@@ -56,7 +56,7 @@ document.querySelectorAll('[class*="reveal-"]').forEach(function(r) {
 
 let navBar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
-let navLi = document.querySelectorAll('#class-active li a');
+let navLi = document.querySelectorAll('#class-active a');
 
 window.onscroll = () => {
     if (window.scrollY > 0.5) {
@@ -76,7 +76,7 @@ window.onscroll = () => {
             navLi.forEach(link => {
                 link.classList.remove('active');
             });
-            document.querySelector('#class-active li a[href="#' + id + '"]').classList.add('active');
+            document.querySelector('#class-active a[href="#' + id + '"]').classList.add('active');
         }
     });
 };

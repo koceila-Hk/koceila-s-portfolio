@@ -90,6 +90,8 @@ p {
     padding: 20px 10px;
 }
 
+ /* ======= @media screen =========  */
+
 @media screen and (max-width: 900px) {
     
     .navbar {
@@ -127,7 +129,7 @@ p {
     }
 
     #intro .container h1 {
-        font-size: 30px;
+        font-size: 35px;
     }
 
     #services .container .card-position {
@@ -146,8 +148,17 @@ p {
 
 }
 
-/* ========= INTRO =========== */
+@media screen and (max-width: 400px) {
+    #intro {
+        background-attachment: local;
+    }
 
+    #resume {
+        background-attachment: local;
+    }
+}
+
+/* ========= INTRO =========== */
 
 #intro {
     background-image: url(../img/8.jpg);
@@ -173,7 +184,7 @@ p {
 #intro .container .intro-content a.fa.fa-angle-down {
     position: absolute;
     bottom: -5%;
-    left: 49%;
+    left: 50%;
     color: #aaa;
     font-size: 36px;
     transition: all 0.5s;
@@ -484,7 +495,6 @@ img.first-image {
     display: flex;
     flex-direction: column;
 }
-
 
 .flip-content p {
     font-size: 13px;
